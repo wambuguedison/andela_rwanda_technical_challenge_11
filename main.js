@@ -29,6 +29,14 @@ fetch(url, { mode: "cors" })
         append(p, span);
         append(li, p);
         append(ul, li);
+        let growth = town["growth_from_2000_to_2013"];
+        growth = Number(growth.replace("%", ""));
+        if (growth < 0) {
+          span.style.color = "red";
+        }
+        if (growth > 0) {
+          span.style.color = "green";
+        }
       });
     });
   })
