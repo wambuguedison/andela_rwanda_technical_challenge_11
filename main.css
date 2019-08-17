@@ -115,3 +115,6 @@ body {
   position: static;
   padding-top: 80px;
 }
+[results] ul {
+  list-style: none;
+}
