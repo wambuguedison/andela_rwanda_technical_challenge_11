@@ -18,7 +18,18 @@ fetch(url, { mode: "cors" })
       return;
     }
     response.json().then(function(data) {
-      console.log(data);
+      let cities = data;
+      console.log(data[999]);
+      return cities.map(town => {
+        let li = createNode("li"),
+          p = createNode("p"),
+          span = createNode("span");
+        p.innerHTML = town["city"];
+        span.innerHTML = town["growth_from_2000_to_2013"];
+        append(p, span);
+        append(li, p);
+        append(ul, li);
+      });
     });
   })
   .catch(function(error) {
