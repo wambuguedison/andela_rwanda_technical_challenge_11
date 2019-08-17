@@ -24,7 +24,7 @@ fetch(url, { mode: "cors" })
         let li = createNode("li"),
           p = createNode("p"),
           span = createNode("span");
-        p.innerHTML = town["city"];
+        p.innerHTML = town["city"] + " ";
         span.innerHTML = town["growth_from_2000_to_2013"];
         append(p, span);
         append(li, p);
