@@ -108,3 +108,10 @@
     vertical-align: middle;
   }
 }
+body {
+  margin-top: 10px;
+}
+[results] {
+  position: static;
+  padding-top: 80px;
+}
