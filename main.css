@@ -1,7 +1,7 @@
 [search] {
   position: fixed;
-  width: 350px;
-  height: 60px;
+  width: 450px;
+  height: 70px;
   left: 35%;
   background-color: aqua;
 }
@@ -11,6 +11,30 @@
 }
 [search] [search-input] {
   float: right;
-  padding-top: 1.2em;
+  padding-top: 0.8em;
   padding-right: 0.5em;
+}
+[search] input {
+  height: 3em;
+  box-sizing: border-box;
+  border: 2px solid #8842d5;
+  border-radius: 5px;
+  text-indent: 1em;
+}
+[search] ::placeholder {
+  font-size: 20px;
+  transform: translateY(0.15em);
+}
+[search] button {
+  background-color: white;
+  float: right;
+  margin-left: 1em;
+  height: 3em;
+  border: 2px solid #8842d5;
+  border-radius: 5px;
+}
+[search] button img {
+  width: 2em;
+  height: 2em;
+  vertical-align: middle;
 }
