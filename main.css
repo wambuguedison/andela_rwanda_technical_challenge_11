@@ -38,7 +38,7 @@
   }
   [search] input:focus {
     background-color: white;
-    border: 5px solid #8842d5;
+    border: 0.15em solid #8842d5;
     border-radius: 5px;
   }
   [search] button {
