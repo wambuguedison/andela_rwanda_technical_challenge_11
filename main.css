@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Indie-Flower;
+  src: url(IndieFlower-Regular.ttf);
+}
+
 [search] {
   position: fixed;
   width: 450px;
@@ -6,8 +11,11 @@
   background-color: aqua;
 }
 [search] [search-title] {
+  margin-top: 0.8em;
   padding-left: 0.5em;
   float: left;
+  font-family: Indie-Flower;
+  color: #8842d5;
 }
 [search] [search-input] {
   float: right;
@@ -24,6 +32,10 @@
 [search] ::placeholder {
   font-size: 20px;
   transform: translateY(0.15em);
+  color: lightgray;
+}
+[search] input:focus {
+  background-color: white;
 }
 [search] button {
   background-color: white;
