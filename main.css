@@ -3,50 +3,108 @@
   src: url(IndieFlower-Regular.ttf);
 }
 
-[search] {
-  position: fixed;
-  width: 450px;
-  height: 70px;
-  left: 35%;
-  background-color: aqua;
+@media (max-width: 575.98px) {
+  [search] {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    left: 0;
+    background-color: aqua;
+    z-index: 99;
+  }
+  [search] [search-title] {
+    margin-top: 0.8em;
+    padding-left: 0.5em;
+    float: left;
+    font-family: Indie-Flower;
+    color: #8842d5;
+  }
+  [search] [search-input] {
+    float: right;
+    padding-top: 0.8em;
+    padding-right: 0.5em;
+  }
+  [search] input {
+    height: 3em;
+    box-sizing: border-box;
+    border: 2px solid #8842d5;
+    border-radius: 5px;
+    text-indent: 1em;
+  }
+  [search] ::placeholder {
+    font-size: 20px;
+    transform: translateY(0.15em);
+    color: lightgray;
+  }
+  [search] input:focus {
+    background-color: white;
+    border: 5px solid #8842d5;
+    border-radius: 5px;
+  }
+  [search] button {
+    background-color: white;
+    float: right;
+    margin-left: 1em;
+    height: 3em;
+    border: 2px solid #8842d5;
+    border-radius: 5px;
+  }
+  [search] button img {
+    width: 2em;
+    height: 2em;
+    vertical-align: middle;
+  }
 }
-[search] [search-title] {
-  margin-top: 0.8em;
-  padding-left: 0.5em;
-  float: left;
-  font-family: Indie-Flower;
-  color: #8842d5;
-}
-[search] [search-input] {
-  float: right;
-  padding-top: 0.8em;
-  padding-right: 0.5em;
-}
-[search] input {
-  height: 3em;
-  box-sizing: border-box;
-  border: 2px solid #8842d5;
-  border-radius: 5px;
-  text-indent: 1em;
-}
-[search] ::placeholder {
-  font-size: 20px;
-  transform: translateY(0.15em);
-  color: lightgray;
-}
-[search] input:focus {
-  background-color: white;
-}
-[search] button {
-  background-color: white;
-  float: right;
-  margin-left: 1em;
-  height: 3em;
-  border: 2px solid #8842d5;
-  border-radius: 5px;
-}
-[search] button img {
-  width: 2em;
-  height: 2em;
-  vertical-align: middle;
+/*For Larger Devices*/
+@media (min-width: 575.98px) {
+  [search] {
+    position: fixed;
+    width: 450px;
+    height: 70px;
+    left: 33%;
+    background-color: aqua;
+    z-index: 99;
+  }
+  [search] [search-title] {
+    margin-top: 0.8em;
+    padding-left: 0.5em;
+    float: left;
+    font-family: Indie-Flower;
+    color: #8842d5;
+  }
+  [search] [search-input] {
+    float: right;
+    padding-top: 0.8em;
+    padding-right: 0.5em;
+  }
+  [search] input {
+    height: 3em;
+    box-sizing: border-box;
+    border: 2px solid #8842d5;
+    border-radius: 5px;
+    text-indent: 1em;
+  }
+  [search] ::placeholder {
+    font-size: 20px;
+    transform: translateY(0.15em);
+    color: lightgray;
+  }
+  [search] input:focus {
+    background-color: white;
+    border: 0.15em solid #8842d5;
+    border-radius: 5px;
+  }
+  [search] button {
+    background-color: white;
+    float: right;
+    margin-left: 1em;
+    height: 3em;
+    border: 2px solid #8842d5;
+    border-radius: 5px;
+  }
+  [search] button img {
+    width: 2em;
+    height: 2em;
+    vertical-align: middle;
+  }
 }
