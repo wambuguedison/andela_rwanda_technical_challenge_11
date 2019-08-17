@@ -1,0 +1,16 @@
+[search] {
+  position: fixed;
+  width: 350px;
+  height: 60px;
+  left: 35%;
+  background-color: aqua;
+}
+[search] [search-title] {
+  padding-left: 0.5em;
+  float: left;
+}
+[search] [search-input] {
+  float: right;
+  padding-top: 1.2em;
+  padding-right: 0.5em;
+}
