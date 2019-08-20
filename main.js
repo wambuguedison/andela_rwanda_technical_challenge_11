@@ -22,20 +22,26 @@ fetch(url, { mode: "cors" })
       console.log(data[999]);
       return cities.map(town => {
         let li = createNode("li"),
-          p = createNode("p"),
-          span = createNode("span");
-        p.innerHTML = town["city"] + " ";
-        span.innerHTML = town["growth_from_2000_to_2013"];
-        append(p, span);
-        append(li, p);
+          pName = createNode("p"),
+          pPoplation = createNode("p"),
+          pState = createNode("p"),
+          pGrowth = createNode("p");
+        pName.innerHTML = town["city"];
+        pPoplation.innerHTML = town["population"];
+        pGrowth.innerHTML = town["growth_from_2000_to_2013"];
+        pState.innerHTML = town["state"];
+        append(li, pName);
+        append(li, pPoplation);
+        append(li, pGrowth);
+        append(li, pState);
         append(ul, li);
         let growth = town["growth_from_2000_to_2013"];
         growth = Number(growth.replace("%", ""));
         if (growth < 0) {
-          span.style.color = "red";
+          pGrowth.style.color = "red";
         }
         if (growth > 0) {
-          span.style.color = "green";
+          pGrowth.style.color = "green";
         }
       });
     });
