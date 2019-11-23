@@ -38,10 +38,10 @@ fetch(url, { mode: "no-cors" })
         pState.innerHTML = "State : " + "<span>" + town["state"] + "</span>";
 
         append(dataDiv, pName);
+        append(dataDiv, pState);
         append(dataDiv, pPopulation);
         append(dataDiv, pGrowth);
         append(pGrowth, spanGrowth);
-        append(dataDiv, pState);
         append(li, dataDiv);
 
         append(ul, li);
@@ -67,14 +67,22 @@ fetch(url, { mode: "no-cors" })
     let input = document.getElementById("search"),
       filter = input.value.toUpperCase(),
       li = document.getElementsByTagName("li"),
-      textValue;
+      cityValue, stateValue;
     for (let i = 0; i < li.length; i++) {
-      let city = li[i].getElementsByTagName("span")[0];
-      textValue = city.textContent || city.innerText;
-      if (textValue.toUpperCase().indexOf(filter) > -1) {
+      let city = li[i].getElementsByTagName("span")[0],
+        state =  li[i].getElementsByTagName("span")[1];
+      cityValue = city.textContent || city.innerText;
+      stateValue = state.textContent || state.innerText;
+      if (cityValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } if (stateValue.toUpperCase().indexOf(filter) > -1) {
         li[i].style.display = "";
       } else {
         li[i].style.display = "none";
       }
+      
+    if (filter === "") {
+      li.style.display = "";
+    }
     }
   };
