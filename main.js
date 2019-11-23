@@ -31,7 +31,7 @@ fetch(url, { mode: "no-cors" })
           pGrowth = createNode("p"),
           spanGrowth = createNode("span");
 
-        pName.innerHTML = "City : " + "<span>" + town["city"] + "</span>";
+        pName.innerHTML = "City : " + "<span id='city'>" + town["city"] + "</span>";
         pPopulation.innerHTML = "Population : " + "<span>" + town["population"] + "</span>";
         pGrowth.innerHTML = "Population Growth : ";
         spanGrowth.innerHTML = town["growth_from_2000_to_2013"];
@@ -62,3 +62,19 @@ fetch(url, { mode: "no-cors" })
   .catch(function(error) {
     console.log("fetch error :-S", error);
   });
+
+  const search = () => {
+    let input = document.getElementById("search"),
+      filter = input.value.toUpperCase(),
+      li = document.getElementsByTagName("li"),
+      textValue;
+    for (let i = 0; i < li.length; i++) {
+      let city = li[i].getElementsByTagName("span")[0];
+      textValue = city.textContent || city.innerText;
+      if (textValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  };
