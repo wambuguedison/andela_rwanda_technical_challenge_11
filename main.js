@@ -6,6 +6,7 @@ const append = (parent, element) => {
   return parent.appendChild(element);
 };
 const ul = document.getElementById("results");
+const usNumberFormat = new Intl.NumberFormat("en-US");
 //const url =
   //"https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
 
@@ -32,7 +33,7 @@ fetch(url, { mode: "no-cors" })
           spanGrowth = createNode("span");
 
         pName.innerHTML = "City : " + "<span id='city'>" + town["city"] + "</span>";
-        pPopulation.innerHTML = "Population : " + "<span>" + town["population"] + "</span>";
+        pPopulation.innerHTML = "Population : " + "<span>" + usNumberFormat.format(town["population"]) + "</span>";
         pGrowth.innerHTML = "Population Growth : ";
         spanGrowth.innerHTML = town["growth_from_2000_to_2013"];
         pState.innerHTML = "State : " + "<span>" + town["state"] + "</span>";
@@ -45,7 +46,6 @@ fetch(url, { mode: "no-cors" })
         append(li, dataDiv);
 
         append(ul, li);
-
 
         //check if growth is lower or greater than zero and color it accordingly
         let growth = town["growth_from_2000_to_2013"];
@@ -80,9 +80,5 @@ fetch(url, { mode: "no-cors" })
       } else {
         li[i].style.display = "none";
       }
-      
-    if (filter === "") {
-      li.style.display = "";
-    }
     }
   };
