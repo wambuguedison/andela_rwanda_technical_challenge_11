@@ -7,12 +7,11 @@ const append = (parent, element) => {
 };
 const ul = document.getElementById("results");
 const usNumberFormat = new Intl.NumberFormat("en-US");
-//const url =
-  //"https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+const url = "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
 
-const url = "http://localhost/cities/cities.json";
+//const url = "http://localhost/cities/cities.json";
 
-fetch(url, { mode: "no-cors" })
+fetch(url, { mode: "cors" })
   .then(function(response) {
     if (response.status !== 200) {
       console.log(
